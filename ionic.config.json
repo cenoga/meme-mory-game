@@ -1,0 +1,7 @@
+{
+  "name": "meme-mory-game",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react-vite"
+}
