@@ -3,7 +3,7 @@ import {
   setupIonicReact
 } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Route } from 'react-router-dom';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -22,9 +22,9 @@ import '@ionic/react/css/text-alignment.css';
 import '@ionic/react/css/text-transformation.css';
 
 /* Theme variables */
-import MainTabs from './layout/MainTabs';
 import './theme/global.scss';
 import './theme/variables.css';
+import Home from './pages/Home';
 
 setupIonicReact();
 
@@ -33,8 +33,7 @@ const App = () => {
   return(
   <IonApp>
     <IonReactRouter>
-      <MainTabs/>
-      <Redirect exact path="/" to="/login" />
+    <Route path="/" component={Home} exact />
     </IonReactRouter>
   </IonApp>
   );
