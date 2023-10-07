@@ -1,32 +1,44 @@
-*{
+* {
   margin: 0;
   padding: 0;
 }
-html, body{
+html,
+body {
   height: 100%;
 }
-body{
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   background-color: #fae19d;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
-h1{
+h1 {
   text-align: center;
   margin-bottom: 1em;
 }
-.container{
-  height: 700px;
-  width: 700px;
+
+.main {
+  box-shadow: none;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background-color: #fae19d;
+}
+
+.container {
+  height: 600px;
+  width: 600px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(4, 1fr);
+  grid-template-rows: repeat(3, 1fr);
   gap: 1em;
 }
 
-.card{
+.card {
   background-color: #fff;
   display: flex;
   justify-content: center;
@@ -36,39 +48,83 @@ h1{
   animation: 2s hideCard linear;
   transition: transform 0.5s;
 }
-@keyframes hideCard{
-  0%, 70%{
+
+.col-img-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .hidden-img {
+    width: 400px; /* Set the desired width of your IonCard */
+    height: 500px; /* Set the desired height of your IonCard */
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .show-img {
+    width: 400px; /* Set the desired width of your IonCard */
+    height: 500px; /* Set the desired height of your IonCard */
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  .hidden-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: blur(25px);
+  }
+  .show-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0; /* Start with 0 opacity */
+    animation: fadeIn 2s ease-in-out forwards; /* Animation properties */
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0; /* Start with 0 opacity */
+  }
+  100% {
+    opacity: 1; /* End with full opacity */
+  }
+}
+
+@keyframes hideCard {
+  0%,
+  70% {
     transform: rotateY(0);
   }
-  100%{
+  100% {
     transform: rotateY(180deg);
   }
 }
-.card img{
-  max-width: 80%;
-  max-height: 80%;
+.card img {
+  border-radius: 5px;
+  width: 95%;
+  height: 95%;
   transition: transform 0.5s;
   transform: scale(0);
   animation: 2s hideImage linear;
 }
-@keyframes hideImage{
-  0%, 70%{
+@keyframes hideImage {
+  0%,
+  70% {
     transform: scale(1);
   }
-  100%{
+  100% {
     transform: scale(0);
   }
 }
 
-.card.active{
+.card.active {
   transform: rotateY(0);
 }
-.card.correct{
+.card.correct {
   background-color: #65e469;
 }
-.card.wrong{
+.card.wrong {
   background-color: #fd245a;
 }
-.card.active img{
+.card.active img {
   transform: scale(1);
 }
