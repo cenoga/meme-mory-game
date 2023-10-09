@@ -9,7 +9,7 @@ body {
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  background-color: #fae19d;
+  background-color: #313a51;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -19,6 +19,15 @@ body {
 h1 {
   text-align: center;
   margin-bottom: 1em;
+  font-size: 2em;
+  color: #e9f0fe;
+}
+
+.header{
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .main {
@@ -26,7 +35,7 @@ h1 {
   display: flex;
   justify-content: left;
   align-items: center;
-  background-color: #fae19d;
+  background-color: #313a51;
 }
 
 .container {

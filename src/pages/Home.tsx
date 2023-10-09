@@ -19,8 +19,8 @@ const Home = () => {
 ].sort(() => Math.random() - 0.5))
 
   return (
-    <div className="App">
-      <h1>MEME-MORY GAME</h1>
+    <div className="main-container">
+      <div className='header'><h1>MEME-MORY GAME</h1></div>
       <IonRow>
         <IonCol className='ion-text-center col-img-container'>
           { randPic.slice(0,1).map((item, index) => (
